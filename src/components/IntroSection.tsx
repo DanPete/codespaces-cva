@@ -11,7 +11,7 @@ export enum ContentLayout {
   CAROUSEL = 'carousel',
 }
 
-type IntroSectionItem = {
+type IntroSectionItemType = {
   link: string
   title: string
   image: string
@@ -24,7 +24,7 @@ type IntroSectionProps = {
   itemLayout: ItemLayout
   contentLayout: ContentLayout
   twoRowCarousel: boolean
-  items: IntroSectionItem[]
+  items: IntroSectionItemType[]
 }
 
 export function IntroSection({
@@ -38,7 +38,60 @@ export function IntroSection({
 }: IntroSectionProps) {
   return (
     <div>
-      <h1>Hi!!</h1>
+      {showHeader && (
+        <IntroSectionHeader heading={heading} body={body} className="mb-8" />
+      )}
+      <div>
+        {items.map((item, index) => (
+          <IntroSectionItem
+            key={index}
+            item={item}
+            itemLayout={itemLayout}
+            contentLayout={contentLayout}
+            twoRowCarousel={twoRowCarousel}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+type IntroSectionHeaderProps = {
+  heading: string
+  body: string
+  className?: string
+}
+
+const IntroSectionHeader = ({
+  heading,
+  body,
+  className = '',
+}: IntroSectionHeaderProps) => {
+  return (
+    <div className={className}>
+      <h2>{heading}</h2>
+      <p>{body}</p>
+    </div>
+  )
+}
+
+function IntroSectionItem({
+  item,
+  itemLayout,
+  contentLayout,
+  twoRowCarousel,
+}: {
+  item: IntroSectionItemType
+  itemLayout: ItemLayout
+  contentLayout: ContentLayout
+  twoRowCarousel: boolean
+}) {
+  return (
+    <div>
+      <a href={item.link}>
+        <img src={item.image} alt={item.title} />
+        <h3>{item.title}</h3>
+      </a>
     </div>
   )
 }
