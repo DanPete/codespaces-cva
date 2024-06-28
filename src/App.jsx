@@ -1,29 +1,20 @@
-import './App.css';
+import Button from './components/Button'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+    <div className="w-screen h-screen">
+      <div className='grid place-items-center h-full p-4'>
+        <div className="flex gap-4 flex-wrap">
+          <Button>Primary Button</Button>
+          <Button variant="secondary">Secondary Button</Button>
+          <Button variant="outline">Outline Button</Button>
+          <Button variant="destructive">Tertiary Button</Button>
+          <Button size="sm">Small Primary Button</Button>
+          <Button variant="link">Link Button</Button>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
