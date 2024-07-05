@@ -30,7 +30,7 @@ function App() {
           />
         </div>
 
-        <div className="my-5">
+        <div className="my-5 bg-slate-300 p-sm -mx-4">
           <IntroSection
             showHeader={false}
             heading="No Header"
@@ -52,7 +52,7 @@ function App() {
           />
         </div>
 
-        <div className="my-5">
+        <div className="mt-5 pb-10">
           <IntroSection
             showHeader={true}
             heading="Left Image Layout"

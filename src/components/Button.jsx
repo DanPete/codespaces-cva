@@ -3,6 +3,7 @@ import { cn } from '../helpers/cn'
 
 const buttonVariants = cva(
   [
+    'cursor-pointer',
     'inline-flex',
     'items-center',
     'justify-center',
