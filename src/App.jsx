@@ -1,6 +1,10 @@
 import Button from './components/Button'
-import { ContentLayout, IntroSection, ItemLayout } from './components/IntroSection'
-import { items } from './data'
+import {
+  ContentLayout,
+  IntroSection,
+  ItemLayout,
+} from './components/IntroSection'
+import { items, moreItems } from './data'
 
 function App() {
   return (
@@ -18,11 +22,43 @@ function App() {
         <div className="my-5">
           <IntroSection
             showHeader={true}
-            heading="Next.js with Tailwind CSS"
-            body="This is a simple Next.js app with Tailwind CSS."
+            heading="Grid Layout"
+            body="This is a grid layout."
             contentLayout={ContentLayout.GRID}
             itemLayout={ItemLayout.TOP_IMAGE}
-            twoRowCarousel={false}
+            items={items}
+          />
+        </div>
+
+        <div className="my-5">
+          <IntroSection
+            showHeader={false}
+            heading="No Header"
+            body="This is a layout without the header info."
+            contentLayout={ContentLayout.GRID}
+            itemLayout={ItemLayout.TOP_IMAGE}
+            items={items}
+          />
+        </div>
+
+        <div className="my-5">
+          <IntroSection
+            showHeader={true}
+            heading="Carousel Layout"
+            body="This is a Carousel layout."
+            contentLayout={ContentLayout.CAROUSEL}
+            itemLayout={ItemLayout.TOP_IMAGE}
+            items={moreItems}
+          />
+        </div>
+
+        <div className="my-5">
+          <IntroSection
+            showHeader={true}
+            heading="Left Image Layout"
+            body="This is a layout without the header info."
+            contentLayout={ContentLayout.GRID}
+            itemLayout={ItemLayout.LEFT_IMAGE}
             items={items}
           />
         </div>
