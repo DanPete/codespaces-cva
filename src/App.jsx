@@ -15,8 +15,14 @@ function App() {
           <Button variant="secondary">Secondary Button</Button>
           <Button variant="outline">Outline Button</Button>
           <Button variant="destructive">Tertiary Button</Button>
-          <Button size="sm">Small Primary Button</Button>
+          <Button variant="primary" size="sm">
+            Small Primary Button
+          </Button>
           <Button variant="link">Link Button</Button>
+          <p></p>
+          <Button variant="primary">
+            Huge Button
+          </Button>
         </div>
 
         <div className="my-5">
